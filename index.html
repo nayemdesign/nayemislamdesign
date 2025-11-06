@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD. Nayem Islam - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Tailwind config for custom colors/animations -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#1e40af', // Deep blue for professionalism
+                        'secondary': '#16a34a', // Green for renewable energy/sustainability
+                        'accent': '#fbbf24', // Amber/yellow for solar energy
+                        'light-bg': '#f3f4f6', // Soft gray for backgrounds
+                        'dark-bg': '#1f2937', // Dark gray for footer
+                    },
+                    animation: {
+                        sparkle: 'sparkle 1.5s infinite alternate',
+                        pulse: 'pulse 2s infinite',
+                        fadeIn: 'fadeIn 1s ease-in-out',
+                    },
+                    keyframes: {
+                        sparkle: {
+                            '0%': { opacity: '0.5', transform: 'scale(1)' },
+                            '100%': { opacity: '1', transform: 'scale(1.2)' },
+                        },
+                        pulse: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.5' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .animation-delay-500 {
+            animation-delay: 0.5s;
+        }
+        /* Additional custom styles for enhanced visuals */
+        .hero-bg {
+            background: linear-gradient(to right, #a5b4fc, #86efac);
+            border-radius: 20px;
+            padding: 40px;
+        }
+        .card-hover:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-light-bg text-gray-800 leading-relaxed">
+    <header class="bg-white shadow-lg fixed w-full z-10">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary">MD. Nayem Islam</a>
+            <div class="hidden lg:flex space-x-8">
+                <a href="#home" class="text-gray-800 font-medium hover:text-secondary transition">Home</a>
+                <a href="#about" class="text-gray-800 font-medium hover:text-secondary transition">About</a>
+                <a href="#experience" class="text-gray-800 font-medium hover:text-secondary transition">Experience</a>
+                <a href="#expertise" class="text-gray-800 font-medium hover:text-secondary transition">Expertise</a>
+                <a href="#projects" class="text-gray-800 font-medium hover:text-secondary transition">Projects</a>
+                <a href="#education" class="text-gray-800 font-medium hover:text-secondary transition">Education</a>
+                <a href="#contact" class="text-gray-800 font-medium hover:text-secondary transition">Contact</a>
+            </div>
+            <a href="#contact" class="bg-accent text-white font-bold py-2 px-6 rounded-full hover:bg-yellow-500 transition btn-hover">Contact Me</a>
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-gray-800 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-md">
+            <div class="flex flex-col space-y-4 px-4 py-4">
+                <a href="#home" class="text-gray-800 font-medium hover:text-secondary transition">Home</a>
+                <a href="#about" class="text-gray-800 font-medium hover:text-secondary transition">About</a>
+                <a href="#experience" class="text-gray-800 font-medium hover:text-secondary transition">Experience</a>
+                <a href="#expertise" class="text-gray-800 font-medium hover:text-secondary transition">Expertise</a>
+                <a href="#projects" class="text-gray-800 font-medium hover:text-secondary transition">Projects</a>
+                <a href="#education" class="text-gray-800 font-medium hover:text-secondary transition">Education</a>
+                <a href="#contact" class="text-gray-800 font-medium hover:text-secondary transition">Contact</a>
+                <a href="#contact" class="bg-accent text-white font-bold py-2 px-4 rounded hover:bg-yellow-500 transition">Contact Me</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="container mx-auto px-4 py-32 lg:py-40 hero-bg animate-fadeIn">
+        <div class="flex flex-col lg:flex-row items-center justify-between">
+            <div class="lg:w-1/2 mb-10 lg:mb-0">
+                <p class="text-xl text-gray-700 animate-pulse">Hey, I'm MD. Nayem Islam</p>
+                <h1 class="text-5xl lg:text-6xl font-bold mb-6 text-primary">Solar PV Engineer</h1>
+                <p class="text-lg text-gray-700 mb-8">Aspiring PV Design Engineer with strong expertise in Solar PV System Design, PV Simulation (PVsyst), CAD, and Electrical Design. Skilled in preparing engineering drawings, utility-scale layouts, and system optimization with a focus on cost efficiency, sustainability, and compliance with IEC standards. Passionate about advancing renewable energy solutions through innovative 4IR technologies and lifelong professional growth.</p>
+                <a href="#contact" class="bg-gradient-to-r from-secondary to-accent text-white font-bold py-3 px-8 rounded-full hover:scale-105 transition-transform btn-hover">Get In Touch</a>
+            </div>
+            <div class="lg:w-1/2 relative text-center lg:text-right">
+                <img src="profile.jpg" alt="MD. Nayem Islam Photo" class="max-w-xs lg:max-w-lg rounded-full bg-white p-5 shadow-2xl hover:rotate-6 transition-transform card-hover">
+                <span class="absolute text-3xl text-accent sparkle top-[15%] left-[35%] animate-sparkle">✨</span>
+                <span class="absolute text-3xl text-secondary sparkle bottom-[25%] right-[5%] animate-sparkle animation-delay-500">✨</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-primary mb-10 animate-fadeIn">About Me</h2>
+            <p class="text-center text-lg max-w-3xl mx-auto text-gray-700">Address: Pallabi, Section-12, Mirpur, Dhaka. Mobile No: +8801790239390. E-mail: mdnayemislam302@gmail.com. Passionate about solar innovation and clean energy, with hands-on experience in PV system design and implementation.</p>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-light-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-primary mb-10 animate-fadeIn">Professional Experience</h2>
+            <div class="space-y-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover transition">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">CAD Design Engineer at Solaric Ltd.</h3>
+                    <p class="text-gray-500 mb-4">Feb, 2025 to Present</p>
+                    <ul class="list-disc pl-6 text-gray-600">
+                        <li>Completed solar PV system design and PV simulation using AutoCAD & PVsyst for rooftop and utility-scale projects.</li>
+                        <li>Prepared engineering drawings (SLD, layouts, BOM) ensuring compliance with IEC standards.</li>
+                        <li>Conducted AC/DC cable sizing, earthing calculations, and cost optimization for renewable energy projects.</li>
+                        <li>Supported solar project implementation from design to commissioning.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover transition">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Sub-Assistant Engineer at Global Renewable Energy Ltd.</h3>
+                    <p class="text-gray-500 mb-4">May, 2024 to Jan, 2025</p>
+                    <ul class="list-disc pl-6 text-gray-600">
+                        <li>Designed solar power systems using AutoCAD and performed detailed PVsyst simulations for optimal system performance.</li>
+                        <li>Prepared single line diagrams (SLD), quotations, Bill of Quantities (BOQ), and Bill of Materials (BOM) to support project planning and procurement.</li>
+                        <li>Led the implementation and commissioning of solar projects, ensuring quality and adherence to technical specifications.</li>
+                        <li>Conducted troubleshooting and maintenance of electrical systems to resolve operational issues efficiently.</li>
+                        <li>Supervised on-site project activities, coordinating with teams to ensure timely and successful project delivery.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover transition">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Assistant Electrician at Pacific Spinning Mills Ltd.</h3>
+                    <p class="text-gray-500 mb-4">September 2022 – April 2023</p>
+                    <ul class="list-disc pl-6 text-gray-600">
+                        <li>Performed diagnostics, routine inspections, and preventive maintenance of electrical systems, including switchgear, PFI panels, HT & LT panels, control panels, PLCs, HMIs, substations, and generators.</li>
+                        <li>Assisted in the erection, commissioning, cable laying, and termination of electrical systems in accordance with technical drawings and Single line diagrams (SLD).</li>
+                        <li>Supported fault detection, troubleshooting, and safe operation of industrial electrical equipment to ensure minimal downtime and operational efficiency.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-primary mb-10 animate-fadeIn">Skills & Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-light-bg p-8 rounded-2xl shadow-lg text-center card-hover transition">
+                    <i class="fas fa-drafting-compass text-5xl text-primary mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Design & Software Skills</h3>
+                    <ul class="text-gray-600 list-disc pl-6 mx-auto text-left max-w-xs">
+                        <li>AutoCAD (2D Solar Layout & Electrical Drawings)</li>
+                        <li>PVsyst (Solar Simulation, PV System Yield Estimation)</li>
+                        <li>Solar PV System Design & Utility-Scale Projects</li>
+                        <li>Engineering Drawings (SLD, BOM, Fabrication)</li>
+                        <li>Knowledge of IEC Standards & Electrical Safety Codes</li>
+                    </ul>
+                </div>
+                <div class="bg-light-bg p-8 rounded-2xl shadow-lg text-center card-hover transition">
+                    <i class="fas fa-tools text-5xl text-primary mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Technical & Field Skills</h3>
+                    <ul class="text-gray-600 list-disc pl-6 mx-auto text-left max-w-xs">
+                        <li>Rooftop & Ground-Mounted PV System Design</li>
+                        <li>Solar PV Installation & Commissioning</li>
+                        <li>Single-Line Diagram (SLD) Development</li>
+                        <li>BOQ & Proposal Drawing Preparation</li>
+                        <li>Electrical Wiring with Earthing & LPS</li>
+                    </ul>
+                </div>
+                <div class="bg-light-bg p-8 rounded-2xl shadow-lg text-center card-hover transition">
+                    <i class="fas fa-certificate text-5xl text-primary mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Technical Certifications</h3>
+                    <ul class="text-gray-600 list-disc pl-6 mx-auto text-left max-w-xs">
+                        <li>Electrician License (Class C) – Electricity Licensing Board (ELB)</li>
+                        <li>NTVQF Level-I – Electrical Installation & Maintenance</li>
+                    </ul>
+                </div>
+                <div class="bg-light-bg p-8 rounded-2xl shadow-lg text-center card-hover transition">
+                    <i class="fas fa-graduation-cap text-5xl text-primary mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Languages</h3>
+                    <ul class="text-gray-600 list-disc pl-6 mx-auto text-left max-w-xs">
+                        <li>Bangla – Native</li>
+                        <li>English – Conversational</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-light-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-primary mb-10 animate-fadeIn">Key Projects & Achievements</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover transition">
+                    <img src="project1.jpg" alt="PV Design for Utility-Scale Projects" class="w-full h-56 object-cover hover:scale-110 transition">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">PV Design for Utility-Scale Projects – Solaric Ltd.</h3>
+                        <ul class="text-gray-600 list-disc pl-6">
+                            <li>Designed detailed CAD layouts for large-scale solar PV projects, including site plans, electrical drawings, mounting structures, and cable routing.</li>
+                            <li>Supported the engineering team with shading analysis, topographical adjustments, and cost-optimized system designs aligned with technical standards.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover transition">
+                    <img src="project2.jpg" alt="Residential Solar System Design Projects" class="w-full h-56 object-cover hover:scale-110 transition">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Residential Solar System Design Projects – Solaric Ltd.</h3>
+                        <ul class="text-gray-600 list-disc pl-6">
+                            <li>Successfully designed 30+ rooftop solar PV systems for residential buildings.</li>
+                            <li>Collaborated with the engineering team to prepare layout plans, shading analysis, and structural mounting designs.</li>
+                            <li>Ensured all designs adhered to technical standards and site-specific requirements.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover transition">
+                    <img src="project3.jpg" alt="Commercial Building Electrical Layouts" class="w-full h-56 object-cover hover:scale-110 transition">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Commercial Building Electrical Layouts</h3>
+                        <ul class="text-gray-600 list-disc pl-6">
+                            <li>Developed electrical layout drawings for 10+ commercial buildings.</li>
+                            <li>Assisted in preparing Single Line Diagrams (SLDs) and panel schedules for project execution.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-primary mb-10 animate-fadeIn">Education & Training</h2>
+            <div class="space-y-8">
+                <div class="bg-light-bg p-8 rounded-2xl shadow-lg card-hover transition">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Diploma in Electrical Engineering</h3>
+                    <p class="text-gray-500 mb-4">Hosenabad Govt. TSC, Doulatpur, Kushtia | Passing Year: 2020 | Result: 3.51 out of 4</p>
+                </div>
+                <div class="bg-light-bg p-8 rounded-2xl shadow-lg card-hover transition">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Secondary School Certificate (SSC)</h3>
+                    <p class="text-gray-500 mb-4">Durgapur Pilot High School, Rajshahi | Passing Year: 2016 | Result: 4.69 out of 5</p>
+                </div>
+                <div class="bg-light-bg p-8 rounded-2xl shadow-lg card-hover transition">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Industrial Training & Workshops</h3>
+                    <ul class="text-gray-600 list-disc pl-6">
+                        <li>PV System Internship - Global Renewable Energy Ltd. | Dhaka, Bangladesh | 2024 | 3 Months</li>
+                        <li>Industrial Electrical Installation - Grameen Shikkha Vocational Training Center, Talbag, Savar, Dhaka | 2024 | 3 Months</li>
+                        <li>Refrigeration & Air Conditioning (RAC) - SOS Vocational Training Center, Mirpur, Dhaka-1216 | 2022 | 6 Months</li>
+                        <li>Industrial Attachment Training Program - IMB Professional and Vocational Skill Institute, Asulia, Savar, Dhaka | 2020 | 45 Days</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="MD_NAYEM_ISLAM.pdf" download class="bg-primary text-white font-bold py-3 px-8 rounded-full hover:scale-105 transition-transform btn-hover">Download Full Resume (PDF)</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-light-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-primary mb-10 animate-fadeIn">Contact</h2>
+            <form action="https://formspree.io/f/your-formspree-id" method="POST" class="max-w-2xl mx-auto space-y-6 bg-white p-8 rounded-2xl shadow-lg">
+                <input type="text" name="name" placeholder="Your Name" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary transition">
+                <input type="email" name="email" placeholder="Your Email" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary transition">
+                <textarea name="message" placeholder="Your Message" rows="6" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary transition"></textarea>
+                <button type="submit" class="w-full bg-gradient-to-r from-primary to-secondary text-white font-bold py-4 rounded-full hover:scale-105 transition-transform btn-hover">Send Message</button>
+            </form>
+            <div class="text-center mt-8 text-gray-700">
+                <p>Email: mdnayemislam302@gmail.com</p>
+                <p>Mobile: +8801790239390</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark-bg text-white text-center py-6">
+        <p>&copy; 2025 MD. Nayem Islam. All rights reserved.</p>
+    </footer>
+
+    <!-- Simple JS for mobile menu toggle -->
+    <script>
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
