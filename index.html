@@ -15,11 +15,11 @@
     </script>
     <style>
         :root {
-            --primary: #27ae60;
-            --secondary: #2ecc71;
-            --dark: #2c3e50;
-            --light: #ecf0f1;
-            --accent: #e74c3c;
+            --primary: #007bff; /* Professional blue */
+            --secondary: #0056b3; /* Darker blue */
+            --dark: #333333; /* Dark gray */
+            --light: #f8f9fa; /* Light gray */
+            --accent: #28a745; /* Green accent */
             --transition: all 0.3s ease;
         }
 
@@ -78,7 +78,7 @@
             color: white;
             font-weight: bold;
             font-size: 22px;
-            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
         }
 
         .logo-text {
@@ -90,6 +90,7 @@
         .nav-links {
             display: flex;
             gap: 30px;
+            align-items: center;
         }
 
         .nav-links a {
@@ -119,6 +120,21 @@
             width: 100%;
         }
 
+        .resume-btn {
+            padding: 8px 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        .resume-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+        }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -127,7 +143,7 @@
             padding-top: 80px;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, rgba(39, 174, 96, 0.05) 0%, rgba(46, 204, 113, 0.05) 100%);
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.05) 0%, rgba(0, 86, 179, 0.05) 100%);
         }
 
         .hero-content {
@@ -176,14 +192,14 @@
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
             border: none;
             cursor: pointer;
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
         }
 
         .hero-image {
@@ -202,7 +218,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            box-shadow: 0 20px 40px rgba(39, 174, 96, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 123, 255, 0.3);
             overflow: hidden;
             animation: float 6s ease-in-out infinite;
         }
@@ -237,7 +253,7 @@
         .shape {
             position: absolute;
             border-radius: 50%;
-            background: rgba(39, 174, 96, 0.1);
+            background: rgba(0, 123, 255, 0.1);
             animation: float 6s ease-in-out infinite;
         }
 
@@ -331,7 +347,7 @@
 
         .skill {
             padding: 8px 20px;
-            background: rgba(39, 174, 96, 0.1);
+            background: rgba(0, 123, 255, 0.1);
             border-radius: 30px;
             font-weight: 500;
             color: var(--primary);
@@ -349,7 +365,7 @@
             border-radius: 20px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             position: relative;
-            box-shadow: 0 20px 40px rgba(39, 174, 96, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 123, 255, 0.3);
             overflow: hidden;
         }
 
@@ -635,7 +651,7 @@
         .contact-icon {
             width: 60px;
             height: 60px;
-            background: rgba(39, 174, 96, 0.1);
+            background: rgba(0, 123, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -684,7 +700,7 @@
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
         }
 
         textarea.form-control {
@@ -831,6 +847,7 @@
                     <a href="#education">Education</a>
                     <a href="#certifications">Certifications</a>
                     <a href="#contact">Contact</a>
+                    <a href="MD_NAYEM_ISLAM.pdf" download class="resume-btn">RESUME</a>
                 </div>
             </nav>
         </div>
@@ -969,13 +986,13 @@
             <div class="education-container">
                 <div class="education-item">
                     <h3>Diploma in Electrical Engineering</h3>
-                    <div class="institution">Hosenabad Govt. TSC</div>
-                    <div class="year">2020 </div>
+                    <div class="institution">Hosenabad Govt. TSC, Doulatpur, Kushtia</div>
+                    <div class="year">2020 | Result: 3.51/4.00</div>
                 </div>
                 <div class="education-item">
                     <h3>Secondary School Certificate (SSC)</h3>
-                    <div class="institution">Durgapur Pilot High School</div>
-                    <div class="year">2016 </div>
+                    <div class="institution">Durgapur Pilot High School, Rajshahi</div>
+                    <div class="year">2016 | Result: 4.69/5.00</div>
                 </div>
             </div>
         </div>
@@ -1058,7 +1075,7 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm" action="https://script.google.com/macros/s/AKfycbyBZyFPD-jlDVzCEfTuehXR3Njg2pBmLS3WGDT_71BcBtcmBgRhsO7uMLvRE4bnlrSUXw/exec" method="POST">
+                    <form id="contactForm" action="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec" method="POST">
                         <div class="form-group">
                             <label for="name">Your Name</label>
                             <input type="text" id="name" name="name" class="form-control" required>
@@ -1116,14 +1133,14 @@
             profileImg.src = imageFolder + "profile.jpg";
             profileImg.onerror = function() {
                 // Fallback placeholder
-                this.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='330' height='330' viewBox='0 0 330 330'%3E%3Crect width='330' height='330' fill='%2327ae60'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='white'%3EMD. NAYEM ISLAM%3C/text%3E%3C/svg%3E";
+                this.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='330' height='330' viewBox='0 0 330 330'%3E%3Crect width='330' height='330' fill='%23007bff'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='white'%3EMD. NAYEM ISLAM%3C/text%3E%3C/svg%3E";
             };
             
             // Load about image
             const aboutImg = document.getElementById('about-image');
             aboutImg.src = imageFolder + "about.jpg";
             aboutImg.onerror = function() {
-                this.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Crect width='360' height='360' fill='%2327ae60'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='white'%3EAbout MD. NAYEM ISLAM%3C/text%3E%3C/svg%3E";
+                this.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Crect width='360' height='360' fill='%23007bff'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='white'%3EAbout MD. NAYEM ISLAM%3C/text%3E%3C/svg%3E";
             };
             
             // Load logo
@@ -1194,10 +1211,12 @@
         });
 
         // Track resume download as GA event
-        document.querySelector('a[download]').addEventListener('click', function() {
-            gtag('event', 'download', {
-                'event_category': 'Resume',
-                'event_label': 'Resume Download'
+        document.querySelectorAll('a[download]').forEach(link => {
+            link.addEventListener('click', function() {
+                gtag('event', 'download', {
+                    'event_category': 'Resume',
+                    'event_label': 'Resume Download'
+                });
             });
         });
     </script>
