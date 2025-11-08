@@ -3,304 +3,1183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD. Nayem Islam - Portfolio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- Tailwind config for custom colors/animations -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#1e40af', // Deep blue for professionalism
-                        'secondary': '#16a34a', // Green for renewable energy/sustainability
-                        'accent': '#fbbf24', // Amber/yellow for solar energy
-                        'light-bg': '#f3f4f6', // Soft gray for backgrounds
-                        'dark-bg': '#1f2937', // Dark gray for footer
-                    },
-                    animation: {
-                        sparkle: 'sparkle 1.5s infinite alternate',
-                        pulse: 'pulse 2s infinite',
-                        fadeIn: 'fadeIn 1s ease-in-out',
-                    },
-                    keyframes: {
-                        sparkle: {
-                            '0%': { opacity: '0.5', transform: 'scale(1)' },
-                            '100%': { opacity: '1', transform: 'scale(1.2)' },
-                        },
-                        pulse: {
-                            '0%, 100%': { opacity: '1' },
-                            '50%': { opacity: '0.5' },
-                        },
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        }
-                    }
-                }
+    <title>MD. NAYEM ISLAM | Solar PV Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #27ae60;
+            --secondary: #2ecc71;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --accent: #e74c3c;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 22px;
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(39, 174, 96, 0.05) 0%, rgba(46, 204, 113, 0.05) 100%);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+            text-transform: uppercase;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #555;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(39, 174, 96, 0.3);
+            overflow: hidden;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .profile-img::before {
+            content: '';
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        .profile-img img {
+            position: relative;
+            width: 330px;
+            height: 330px;
+            border-radius: 50%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(39, 174, 96, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            left: 80%;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            width: 70px;
+            height: 70px;
+            top: 80%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
             }
         }
-    </script>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: white;
         }
-        .animation-delay-500 {
-            animation-delay: 0.5s;
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
         }
-        /* Additional custom styles for enhanced visuals */
-        .hero-bg {
-            background: linear-gradient(to right, #a5b4fc, #86efac);
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .skill {
+            padding: 8px 20px;
+            background: rgba(39, 174, 96, 0.1);
+            border-radius: 30px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .about-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-img {
+            width: 400px;
+            height: 400px;
             border-radius: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            position: relative;
+            box-shadow: 0 20px 40px rgba(39, 174, 96, 0.3);
+            overflow: hidden;
+        }
+
+        .about-img::before {
+            content: '';
+            position: absolute;
+            width: 380px;
+            height: 380px;
+            border-radius: 10px;
+            background: white;
+            top: 10px;
+            left: 10px;
+        }
+
+        .about-img img {
+            position: relative;
+            width: 360px;
+            height: 360px;
+            border-radius: 10px;
+            object-fit: cover;
+            top: 20px;
+            left: 20px;
+            z-index: 1;
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            top: 30px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 0 4px var(--primary);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: -10px;
+            background-color: white;
+            top: 30px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 0 4px var(--primary);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .timeline-content .company {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content .year {
+            color: #777;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .project-content p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Education Section */
+        .education {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .education-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .education-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            position: relative;
+            transition: var(--transition);
+            border-left: 5px solid var(--primary);
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .education-item .institution {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .education-item .year {
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        /* Certifications & Training Section */
+        .certifications {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cert-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border-left: 5px solid var(--primary);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .cert-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .cert-card p {
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(39, 174, 96, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .contact-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-details p {
+            color: #777;
+        }
+
+        .contact-form {
+            flex: 1;
+            background: white;
             padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
-        .card-hover:hover {
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+        .form-group {
+            margin-bottom: 20px;
         }
-        .btn-hover:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content, .about-content, .contact-container {
+                flex-direction: column;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+            
+            .profile-img, .about-img {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .profile-img::before {
+                width: 270px;
+                height: 270px;
+            }
+            
+            .profile-img img {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .about-img::before {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .about-img img {
+                width: 260px;
+                height: 260px;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: 20px;
+                right: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-text h2 {
+                font-size: 1.4rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
-<body class="bg-light-bg text-gray-800 leading-relaxed">
-    <header class="bg-white shadow-lg fixed w-full z-10">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-primary">MD. Nayem Islam</a>
-            <div class="hidden lg:flex space-x-8">
-                <a href="#home" class="text-gray-800 font-medium hover:text-secondary transition">Home</a>
-                <a href="#about" class="text-gray-800 font-medium hover:text-secondary transition">About</a>
-                <a href="#experience" class="text-gray-800 font-medium hover:text-secondary transition">Experience</a>
-                <a href="#expertise" class="text-gray-800 font-medium hover:text-secondary transition">Expertise</a>
-                <a href="#projects" class="text-gray-800 font-medium hover:text-secondary transition">Projects</a>
-                <a href="#education" class="text-gray-800 font-medium hover:text-secondary transition">Education</a>
-                <a href="#contact" class="text-gray-800 font-medium hover:text-secondary transition">Contact</a>
-            </div>
-            <a href="#contact" class="bg-accent text-white font-bold py-2 px-6 rounded-full hover:bg-yellow-500 transition btn-hover">Contact Me</a>
-            <!-- Mobile menu button -->
-            <button id="mobile-menu-btn" class="lg:hidden text-gray-800 focus:outline-none">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </nav>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-md">
-            <div class="flex flex-col space-y-4 px-4 py-4">
-                <a href="#home" class="text-gray-800 font-medium hover:text-secondary transition">Home</a>
-                <a href="#about" class="text-gray-800 font-medium hover:text-secondary transition">About</a>
-                <a href="#experience" class="text-gray-800 font-medium hover:text-secondary transition">Experience</a>
-                <a href="#expertise" class="text-gray-800 font-medium hover:text-secondary transition">Expertise</a>
-                <a href="#projects" class="text-gray-800 font-medium hover:text-secondary transition">Projects</a>
-                <a href="#education" class="text-gray-800 font-medium hover:text-secondary transition">Education</a>
-                <a href="#contact" class="text-gray-800 font-medium hover:text-secondary transition">Contact</a>
-                <a href="#contact" class="bg-accent text-white font-bold py-2 px-4 rounded hover:bg-yellow-500 transition">Contact Me</a>
-            </div>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <!-- Logo will be automatically loaded from images folder -->
+                    <div class="logo-img" id="logo-container">
+                        <!-- If logo.png exists, it will be shown here -->
+                    </div>
+                    <div class="logo-text">MD. NAYEM ISLAM</div>
+                </div>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#education">Education</a>
+                    <a href="#certifications">Certifications</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
         </div>
     </header>
 
-    <section id="home" class="container mx-auto px-4 py-32 lg:py-40 hero-bg animate-fadeIn">
-        <div class="flex flex-col lg:flex-row items-center justify-between">
-            <div class="lg:w-1/2 mb-10 lg:mb-0">
-                <p class="text-xl text-gray-700 animate-pulse">Hey, I'm MD. Nayem Islam</p>
-                <h1 class="text-5xl lg:text-6xl font-bold mb-6 text-primary">Solar PV Engineer</h1>
-                <p class="text-lg text-gray-700 mb-8">Aspiring PV Design Engineer with strong expertise in Solar PV System Design, PV Simulation (PVsyst), CAD, and Electrical Design. Skilled in preparing engineering drawings, utility-scale layouts, and system optimization with a focus on cost efficiency, sustainability, and compliance with IEC standards. Passionate about advancing renewable energy solutions through innovative 4IR technologies and lifelong professional growth.</p>
-                <a href="#contact" class="bg-gradient-to-r from-secondary to-accent text-white font-bold py-3 px-8 rounded-full hover:scale-105 transition-transform btn-hover">Get In Touch</a>
-            </div>
-            <div class="lg:w-1/2 relative text-center lg:text-right">
-                <img src="profile.jpg" alt="MD. Nayem Islam Photo" class="max-w-xs lg:max-w-lg rounded-full bg-white p-5 shadow-2xl hover:rotate-6 transition-transform card-hover">
-                <span class="absolute text-3xl text-accent sparkle top-[15%] left-[35%] animate-sparkle">✨</span>
-                <span class="absolute text-3xl text-secondary sparkle bottom-[25%] right-[5%] animate-sparkle animation-delay-500">✨</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-primary mb-10 animate-fadeIn">About Me</h2>
-            <p class="text-center text-lg max-w-3xl mx-auto text-gray-700">Address: Pallabi, Section-12, Mirpur, Dhaka. Mobile No: +8801790239390. E-mail: mdnayemislam302@gmail.com. Passionate about solar innovation and clean energy, with hands-on experience in PV system design and implementation.</p>
-        </div>
-    </section>
-
-    <section id="experience" class="py-20 bg-light-bg">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-primary mb-10 animate-fadeIn">Professional Experience</h2>
-            <div class="space-y-8">
-                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover transition">
-                    <h3 class="text-2xl font-bold mb-2 text-gray-800">CAD Design Engineer at Solaric Ltd.</h3>
-                    <p class="text-gray-500 mb-4">Feb, 2025 to Present</p>
-                    <ul class="list-disc pl-6 text-gray-600">
-                        <li>Completed solar PV system design and PV simulation using AutoCAD & PVsyst for rooftop and utility-scale projects.</li>
-                        <li>Prepared engineering drawings (SLD, layouts, BOM) ensuring compliance with IEC standards.</li>
-                        <li>Conducted AC/DC cable sizing, earthing calculations, and cost optimization for renewable energy projects.</li>
-                        <li>Supported solar project implementation from design to commissioning.</li>
-                    </ul>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>MD. NAYEM ISLAM</h1>
+                    <h2>SOLAR PV ENGINEER</h2>
+                    <p>Aspiring PV Design Engineer with strong expertise in Solar PV System Design, PV Simulation (PVsyst), CAD, and Electrical Design. Skilled in preparing engineering drawings, utility-scale layouts, and system optimization with a focus on cost efficiency, sustainability, and compliance with IEC standards. Passionate about advancing renewable energy solutions through innovative 4IR technologies and lifelong professional growth.</p>
+                    <a href="#contact" class="btn">Get In Touch</a>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover transition">
-                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Sub-Assistant Engineer at Global Renewable Energy Ltd.</h3>
-                    <p class="text-gray-500 mb-4">May, 2024 to Jan, 2025</p>
-                    <ul class="list-disc pl-6 text-gray-600">
-                        <li>Designed solar power systems using AutoCAD and performed detailed PVsyst simulations for optimal system performance.</li>
-                        <li>Prepared single line diagrams (SLD), quotations, Bill of Quantities (BOQ), and Bill of Materials (BOM) to support project planning and procurement.</li>
-                        <li>Led the implementation and commissioning of solar projects, ensuring quality and adherence to technical specifications.</li>
-                        <li>Conducted troubleshooting and maintenance of electrical systems to resolve operational issues efficiently.</li>
-                        <li>Supervised on-site project activities, coordinating with teams to ensure timely and successful project delivery.</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover transition">
-                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Assistant Electrician at Pacific Spinning Mills Ltd.</h3>
-                    <p class="text-gray-500 mb-4">September 2022 – April 2023</p>
-                    <ul class="list-disc pl-6 text-gray-600">
-                        <li>Performed diagnostics, routine inspections, and preventive maintenance of electrical systems, including switchgear, PFI panels, HT & LT panels, control panels, PLCs, HMIs, substations, and generators.</li>
-                        <li>Assisted in the erection, commissioning, cable laying, and termination of electrical systems in accordance with technical drawings and Single line diagrams (SLD).</li>
-                        <li>Supported fault detection, troubleshooting, and safe operation of industrial electrical equipment to ensure minimal downtime and operational efficiency.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="expertise" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-primary mb-10 animate-fadeIn">Skills & Expertise</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-light-bg p-8 rounded-2xl shadow-lg text-center card-hover transition">
-                    <i class="fas fa-drafting-compass text-5xl text-primary mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Design & Software Skills</h3>
-                    <ul class="text-gray-600 list-disc pl-6 mx-auto text-left max-w-xs">
-                        <li>AutoCAD (2D Solar Layout & Electrical Drawings)</li>
-                        <li>PVsyst (Solar Simulation, PV System Yield Estimation)</li>
-                        <li>Solar PV System Design & Utility-Scale Projects</li>
-                        <li>Engineering Drawings (SLD, BOM, Fabrication)</li>
-                        <li>Knowledge of IEC Standards & Electrical Safety Codes</li>
-                    </ul>
-                </div>
-                <div class="bg-light-bg p-8 rounded-2xl shadow-lg text-center card-hover transition">
-                    <i class="fas fa-tools text-5xl text-primary mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Technical & Field Skills</h3>
-                    <ul class="text-gray-600 list-disc pl-6 mx-auto text-left max-w-xs">
-                        <li>Rooftop & Ground-Mounted PV System Design</li>
-                        <li>Solar PV Installation & Commissioning</li>
-                        <li>Single-Line Diagram (SLD) Development</li>
-                        <li>BOQ & Proposal Drawing Preparation</li>
-                        <li>Electrical Wiring with Earthing & LPS</li>
-                    </ul>
-                </div>
-                <div class="bg-light-bg p-8 rounded-2xl shadow-lg text-center card-hover transition">
-                    <i class="fas fa-certificate text-5xl text-primary mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Technical Certifications</h3>
-                    <ul class="text-gray-600 list-disc pl-6 mx-auto text-left max-w-xs">
-                        <li>Electrician License (Class C) – Electricity Licensing Board (ELB)</li>
-                        <li>NTVQF Level-I – Electrical Installation & Maintenance</li>
-                    </ul>
-                </div>
-                <div class="bg-light-bg p-8 rounded-2xl shadow-lg text-center card-hover transition">
-                    <i class="fas fa-graduation-cap text-5xl text-primary mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Languages</h3>
-                    <ul class="text-gray-600 list-disc pl-6 mx-auto text-left max-w-xs">
-                        <li>Bangla – Native</li>
-                        <li>English – Conversational</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-20 bg-light-bg">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-primary mb-10 animate-fadeIn">Key Projects & Achievements</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover transition">
-                    <img src="project1.jpg" alt="PV Design for Utility-Scale Projects" class="w-full h-56 object-cover hover:scale-110 transition">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-3 text-gray-800">PV Design for Utility-Scale Projects – Solaric Ltd.</h3>
-                        <ul class="text-gray-600 list-disc pl-6">
-                            <li>Designed detailed CAD layouts for large-scale solar PV projects, including site plans, electrical drawings, mounting structures, and cable routing.</li>
-                            <li>Supported the engineering team with shading analysis, topographical adjustments, and cost-optimized system designs aligned with technical standards.</li>
-                        </ul>
+                <div class="hero-image">
+                    <div class="profile-img">
+                        <!-- Profile image will be automatically loaded -->
+                        <img id="profile-image" alt="MD. NAYEM ISLAM">
                     </div>
-                </div>
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover transition">
-                    <img src="project2.jpg" alt="Residential Solar System Design Projects" class="w-full h-56 object-cover hover:scale-110 transition">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Residential Solar System Design Projects – Solaric Ltd.</h3>
-                        <ul class="text-gray-600 list-disc pl-6">
-                            <li>Successfully designed 30+ rooftop solar PV systems for residential buildings.</li>
-                            <li>Collaborated with the engineering team to prepare layout plans, shading analysis, and structural mounting designs.</li>
-                            <li>Ensured all designs adhered to technical standards and site-specific requirements.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover transition">
-                    <img src="project3.jpg" alt="Commercial Building Electrical Layouts" class="w-full h-56 object-cover hover:scale-110 transition">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Commercial Building Electrical Layouts</h3>
-                        <ul class="text-gray-600 list-disc pl-6">
-                            <li>Developed electrical layout drawings for 10+ commercial buildings.</li>
-                            <li>Assisted in preparing Single Line Diagrams (SLDs) and panel schedules for project execution.</li>
-                        </ul>
+                    <div class="floating-shapes">
+                        <div class="shape"></div>
+                        <div class="shape"></div>
+                        <div class="shape"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="education" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-primary mb-10 animate-fadeIn">Education & Training</h2>
-            <div class="space-y-8">
-                <div class="bg-light-bg p-8 rounded-2xl shadow-lg card-hover transition">
-                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Diploma in Electrical Engineering</h3>
-                    <p class="text-gray-500 mb-4">Hosenabad Govt. TSC, Doulatpur, Kushtia | Passing Year: 2020 | Result: 3.51 out of 4</p>
-                </div>
-                <div class="bg-light-bg p-8 rounded-2xl shadow-lg card-hover transition">
-                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Secondary School Certificate (SSC)</h3>
-                    <p class="text-gray-500 mb-4">Durgapur Pilot High School, Rajshahi | Passing Year: 2016 | Result: 4.69 out of 5</p>
-                </div>
-                <div class="bg-light-bg p-8 rounded-2xl shadow-lg card-hover transition">
-                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Industrial Training & Workshops</h3>
-                    <ul class="text-gray-600 list-disc pl-6">
-                        <li>PV System Internship - Global Renewable Energy Ltd. | Dhaka, Bangladesh | 2024 | 3 Months</li>
-                        <li>Industrial Electrical Installation - Grameen Shikkha Vocational Training Center, Talbag, Savar, Dhaka | 2024 | 3 Months</li>
-                        <li>Refrigeration & Air Conditioning (RAC) - SOS Vocational Training Center, Mirpur, Dhaka-1216 | 2022 | 6 Months</li>
-                        <li>Industrial Attachment Training Program - IMB Professional and Vocational Skill Institute, Asulia, Savar, Dhaka | 2020 | 45 Days</li>
-                    </ul>
-                </div>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
             </div>
-            <div class="text-center mt-8">
-                <a href="MD_NAYEM_ISLAM.pdf" download class="bg-primary text-white font-bold py-3 px-8 rounded-full hover:scale-105 transition-transform btn-hover">Download Full Resume (PDF)</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-20 bg-light-bg">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-primary mb-10 animate-fadeIn">Contact</h2>
-            <form action="https://formspree.io/f/your-formspree-id" method="POST" class="max-w-2xl mx-auto space-y-6 bg-white p-8 rounded-2xl shadow-lg">
-                <input type="text" name="name" placeholder="Your Name" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary transition">
-                <input type="email" name="email" placeholder="Your Email" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary transition">
-                <textarea name="message" placeholder="Your Message" rows="6" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary transition"></textarea>
-                <button type="submit" class="w-full bg-gradient-to-r from-primary to-secondary text-white font-bold py-4 rounded-full hover:scale-105 transition-transform btn-hover">Send Message</button>
-            </form>
-            <div class="text-center mt-8 text-gray-700">
-                <p>Email: mdnayemislam302@gmail.com</p>
-                <p>Mobile: +8801790239390</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Aspiring PV Design Engineer with strong expertise in Solar PV System Design, PV Simulation (PVsyst), CAD, and Electrical Design. Skilled in preparing engineering drawings, utility-scale layouts, and system optimization with a focus on cost efficiency, sustainability, and compliance with IEC standards.</p>
+                    <p>Passionate about advancing renewable energy solutions through innovative 4IR technologies and lifelong professional growth. With hands-on experience in rooftop & ground-mounted PV system design, installation, and commissioning.</p>
+                    <div class="skills">
+                        <div class="skill">AutoCAD</div>
+                        <div class="skill">PVsyst</div>
+                        <div class="skill">Solar PV System Design</div>
+                        <div class="skill">Electrical Design</div>
+                        <div class="skill">Utility-Scale Projects</div>
+                        <div class="skill">Project Commissioning</div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-img">
+                        <!-- About image will be automatically loaded -->
+                        <img id="about-image" alt="About MD. NAYEM ISLAM">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-dark-bg text-white text-center py-6">
-        <p>&copy; 2025 MD. Nayem Islam. All rights reserved.</p>
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>CAD Design Engineer</h3>
+                        <div class="company">Solaric Ltd.</div>
+                        <div class="year">Feb 2025 - Present</div>
+                        <p>Completed solar PV system design and PV simulation using AutoCAD & PVsyst for rooftop and utility-scale projects. Prepared engineering drawings (SLD, layouts, BOM) ensuring compliance with IEC standards.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Sub-Assistant Engineer</h3>
+                        <div class="company">Global Renewable Energy Ltd.</div>
+                        <div class="year">May 2024 - Jan 2025</div>
+                        <p>Designed solar power systems using AutoCAD and performed detailed PVsyst simulations. Prepared single line diagrams, quotations, BOQ, and BOM. Led implementation and commissioning of solar projects.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Assistant Electrician</h3>
+                        <div class="company">Pacific Spinning Mills Ltd.</div>
+                        <div class="year">Sep 2022 - Apr 2023</div>
+                        <p>Performed diagnostics, routine inspections, and preventive maintenance of electrical systems. Assisted in erection, commissioning, cable laying, and termination of electrical systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Key Projects & Achievements</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">PV</div>
+                    <div class="project-content">
+                        <h3>PV Design for Utility-Scale Projects - Solaric Ltd.</h3>
+                        <p>Designed detailed CAD layouts for large-scale solar PV projects, including site plans, electrical drawings, mounting structures, and cable routing. Supported the engineering team with shading analysis, topographical adjustments, and cost-optimized system designs aligned with technical standards.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">RS</div>
+                    <div class="project-content">
+                        <h3>Residential Solar System Design Projects - Solaric Ltd.</h3>
+                        <p>Successfully designed 30+ rooftop solar PV systems for residential buildings. Collaborated with the engineering team to prepare layout plans, shading analysis, and structural mounting designs. Ensured all designs adhered to technical standards and site-specific requirements.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">CB</div>
+                    <div class="project-content">
+                        <h3>Commercial Building Electrical Layouts</h3>
+                        <p>Developed electrical layout drawings for 10+ commercial buildings. Assisted in preparing Single Line Diagrams (SLDs) and panel schedules for project execution.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+            <div class="education-container">
+                <div class="education-item">
+                    <h3>Diploma in Electrical Engineering</h3>
+                    <div class="institution">Hosenabad Govt. Technical Scool & College </div>
+                    <div class="year">2020</div>
+                </div>
+                <div class="education-item">
+                    <h3>Secondary School Certificate (SSC)</h3>
+                    <div class="institution">Durgapur Pilot High School</div>
+                    <div class="year">2016 </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Training Section -->
+    <section class="certifications" id="certifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications & Training</h2>
+            </div>
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <h3>Technical Certifications</h3>
+                    <p>Electrician License (Class C) – Electricity Licensing Board (ELB)</p>
+                    <p>NTVQF Level-I – Electrical Installation & Maintenance</p>
+                </div>
+                <div class="cert-card">
+                    <h3>PV System Internship</h3>
+                    <p>Global Renewable Energy Ltd.</p>
+                    <p>Year: 2024 | Duration: 3 Months</p>
+                    <p>Focus: Practical exposure in solar PV system installation, Design, site assessment, technical documentation, and teamwork under engineering supervision.</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Industrial Electrical Installation</h3>
+                    <p>Grameen Shikkha Vocational Training Center, Talbag, Savar, Dhaka</p>
+                    <p>Year: 2024 | Duration: 3 Months</p>
+                    <p>Focus: Industrial electrical wiring, control systems, safety protocols, and field-level electrical practices.</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Refrigeration & Air Conditioning (RAC)</h3>
+                    <p>SOS Vocational Training Center, Mirpur, Dhaka-1216</p>
+                    <p>Year: 2022 | Duration: 6 Months</p>
+                    <p>Focus: Basic to advanced RAC systems, maintenance, and environmental safety.</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Industrial Attachment Training Program</h3>
+                    <p>IMB Professional and Vocational Skill Institute, Asulia, Savar, Dhaka</p>
+                    <p>Year: 2020 | Duration: 45 Days</p>
+                    <p>Focus: Electrical drawing, residential/commercial wiring design, AutoCAD basics, and essential IT skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Dhaka, Bangladesh</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>mdnayemislam302@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+8801790239390</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <div class="logo-img" id="footer-logo">
+                        <!-- Footer logo will be automatically loaded -->
+                    </div>
+                    <div class="logo-text">MD. NAYEM ISLAM</div>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025@NAYEM ISLAM. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
 
-    <!-- Simple JS for mobile menu toggle -->
     <script>
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        // Function to load images automatically
+        function loadImages() {
+            // Define the folder path where your images are stored
+            const imageFolder = "./";  // Assuming images are in the root folder
+            
+            // Load profile image
+            const profileImg = document.getElementById('profile-image');
+            profileImg.src = imageFolder + "profile.jpg";
+            profileImg.onerror = function() {
+                // Fallback placeholder
+                this.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='330' height='330' viewBox='0 0 330 330'%3E%3Crect width='330' height='330' fill='%2327ae60'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='white'%3EMD. NAYEM ISLAM%3C/text%3E%3C/svg%3E";
+            };
+            
+            // Load about image
+            const aboutImg = document.getElementById('about-image');
+            aboutImg.src = imageFolder + "about.jpg";
+            aboutImg.onerror = function() {
+                this.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Crect width='360' height='360' fill='%2327ae60'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='white'%3EAbout MD. NAYEM ISLAM%3C/text%3E%3C/svg%3E";
+            };
+            
+            // Load logo
+            const logoContainer = document.getElementById('logo-container');
+            const footerLogo = document.getElementById('footer-logo');
+            
+            const logoImg = new Image();
+            logoImg.src = imageFolder + "logo.png";
+            logoImg.alt = "Logo";
+            logoImg.style.width = "100%";
+            logoImg.style.height = "100%";
+            logoImg.style.borderRadius = "8px";
+            
+            logoImg.onerror = function() {
+                // Fallback to initials
+                logoContainer.innerHTML = "NI";
+                footerLogo.innerHTML = "NI";
+            };
+            
+            logoImg.onload = function() {
+                logoContainer.innerHTML = "";
+                logoContainer.appendChild(logoImg.cloneNode(true));
+                footerLogo.innerHTML = "";
+                footerLogo.appendChild(logoImg.cloneNode(true));
+            };
+        }
+        
+        // Load images on page load
+        window.addEventListener('DOMContentLoaded', loadImages);
+
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-content, .education-item, .about-text, .about-img, .project-card, .cert-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
         });
     </script>
 </body>
